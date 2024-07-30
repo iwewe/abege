@@ -1,0 +1,186 @@
+<html>
+ <head>
+    <title>Membuat teks 4b63 </title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="title" content="membuat teks 4b63 64uL"/>
+    <meta name="description" content="membuat teks 4b63 64uL "/>
+       
+    <style type="text/css">
+     body {font-family: Verdana; font-size:11pt; background-color:#535353;}
+     #pgDiv {position:absolute;left:50%;width:800px;margin-left:-410px;background-color:#ffffff;padding-left:25px;padding-top:6px;}
+     textarea.inputBox {color:#555577; width:770px;padding-left:8px;overflow:auto;font-family:"Arial Unicode MS", Batang, tahoma; font-size:12pt;}
+     h1 {color:#993300;font-family:georgia;margin-top:0px;font-weight:normal;margin-bottom:8px;} 
+     .l {font-weight:normal;color:#993300;}
+     .g {color:#aaa;font-size:0.7em;}
+     a:link, a:visited {color:#888888;}
+     a.ref:link {font-size:10pt;text-decoration:none;} a.ref:visited {font-size:10pt;text-decoration:none;}
+     .phrase {display:inline;padding-left:5px;font-style:italic;color:#555;}     
+    </style>
+
+  </head>
+  <body>
+
+  <div id="pgDiv">
+    <h1>.: ABG Text Generator :.</h1>
+    <form name="f">
+      <span class="l"> Silahkan isikan kalimat manusiawi yang ingin dijadikan kalimat ABG:
+      </span> <br><br>
+<tr>
+      			<td>	<input type="checkbox" name="pilihan"> HuRUf bEsAr keCil</th>
+     			
+                </tr><br>
+		
+		<tr>
+			<td>	<input type="checkbox" name="pilihan"> P4k3 4n9k4 D0n9</th>
+		</tr><br>
+
+		<tr>
+			<td>	<input type="checkbox" name="pilihan"> Disngkt-sngkt biar pndk</th>
+		</tr><br>
+
+      <br><textarea rows="3" cols="100" name="aseli" onkeyup="HumanToABG(this.form)" style="background-color:#c6e6e7;" class="inputBox"></textarea>
+      
+      <p>
+      <span class="l">jadinya ky4 gn dH  </span> <span class="g">(bisa dicopy lagi kemana aja)</span>
+
+      <br><textarea rows="3" cols="105" name="abg" id="i" onclick="SelectAll('i');" readonly style="background-color:#e6e6fa;" class="inputBox"></textarea>
+    </form>
+    
+    <div style="color:#888;font-size:11px;width:750px;margin-bottom:10px;line-height:15px;">
+    </div>
+         
+    <div style="display:block;width:800px;clear:both;">
+      </div>
+            
+      <div style="padding-top:5px;padding-bottom:20px;color:#888;font-size:10pt;">    
+                
+     <div style="color:#888;font-size:11px;width:750px;margin-bottom:10px;line-height:15px;">
+      <div style="float:left;margin:0px 0px 10px 0px;" id="diggthis"> 
+	</div>Program sederhana digunakan untuk membuat Text ABG secara standard yang susah diketik oleh manusia biasa. Tapi tidak bisa dipakai untuk menterjemahkan bahasa ABG ke bahasa manusiawi.
+      <br><br>Kalau ada yang kurang dan salah, <a href="https://web.archive.org/web/20090902035516/http://www.t4mp4h.org/"> silahkan hubungi saya </a>!<br><br>Hak Cipta dilindungi <b>Japhe Methe Licensed&#169;</b>, boleh disebarluaskan kepada kawanmu di Multiply, Facebook, Wordpress, Blogspot, Kaskus, Friendster, Twitter, Plurk, Hi5, MySpace, Yahoo, MSN, AOL, Bebo, Gmail, angkringan, lesehan...dan lainnya.  <br>
+    <br><h1><b><blink>Love Jogja n You !!</blink></b></h1>
+    </div>
+
+
+    </div>        
+      </div>      
+    </div>
+<body>
+
+</center>
+<script type="text/javascript">
+<!--
+  function HumanToABG(form){
+    var abgteks="";
+    var stemp;
+    var i,j;
+    var acak;
+    var aseli=form.aseli.value;
+    
+    var TabelHuruf="AEGIOSZ";
+    var TabelAngka="4361052"; //01234567890
+    
+    var TabelVokal="AIUEO";
+    
+    if(aseli.length)
+    {
+	    //modifikasi huruf besar kecil kecil
+	    if(form.pilihan[0].checked==true)
+	    {
+		    for(i=0;i<aseli.length;i++)
+			 {
+			 		acak = Math.round(2*Math.random())
+			 		if(acak)
+			    		abgteks=abgteks+aseli.charAt(i).toLowerCase();
+			    	else
+			    		abgteks=abgteks+aseli.charAt(i).toUpperCase();
+			 }
+		 }	
+		 else
+		 	abgteks=aseli;
+		 
+		 //Modifikasi huruf jadi angka
+		 var terganti=0;
+		 stemp="";
+		 if(form.pilihan[1].checked==true)
+	    {
+		    for(i=0;i<aseli.length;i++)
+			 {
+					acak=Math.round(2*Math.random())
+					terganti=0;
+					if(acak)
+					{
+				 		
+				 		for(j=0;j<TabelHuruf.length;j++)
+				 		{	
+				 			if(abgteks.charAt(i).toUpperCase()==TabelHuruf.charAt(j))
+				 			{
+				   			stemp=stemp+TabelAngka.charAt(j);
+				   			
+				   			terganti=1;
+				   			break;
+				   		}
+				   	}
+			   	}	   		
+			   	
+			   	if(terganti==0) //huruf tidak dapat diganti 
+			   		stemp=stemp+abgteks.charAt(i);
+			 }
+			 abgteks=stemp;
+		 }	
+		
+		//disingkat-singkat biar pendek
+		stemp="";
+		if(form.pilihan[2].checked==true)
+	    {
+		    for(i=0;i<aseli.length;i++)
+			 {
+					acak=Math.round(2*Math.random())
+					terganti=0;
+					if(acak)
+					{
+				 		
+				 		for(j=0;j<TabelVokal.length;j++)
+				 		{	
+				 			if(aseli.charAt(i).toUpperCase()==TabelVokal.charAt(j))
+				 			{
+				 				if((aseli.charAt(i-1)!=" ")&&(i>0))
+				 				{
+				   				//stemp=stemp+TabelAngka.charAt(j); hilangkan saja
+				   				terganti=1;
+				   			}
+				   			break;
+				   		}
+				   	}
+			   	}	   		
+			   	
+			   	if(terganti==0) //huruf tidak dapat diganti 
+			   		stemp=stemp+abgteks.charAt(i);
+			 }
+			 abgteks=stemp;
+		 }	
+		 
+		 
+	    form.abg.value=abgteks;
+	 	}
+	 	else
+	 	{
+	 		form.abg.value="tolong itu diisi dulu form diatas ya";
+	 	}
+    }
+// -->
+
+</script>
+<script type="text/javascript">
+  document.f.original.focus();
+  function SelectAll(id)
+  {
+      document.getElementById(id).focus();
+      document.getElementById(id).select();
+  }
+
+
+</script>
+</body>
+</html>
