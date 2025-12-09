@@ -40,7 +40,7 @@ function HumanToABG(form) {
                     }
                 }
 
-                if (terganti == 0) //huruf tidak dapat diganti 
+                if (terganti == 0) //huruf tidak dapat diganti
                     stemp = stemp + abgteks.charAt(i);
             }
             abgteks = stemp;
@@ -64,7 +64,7 @@ function HumanToABG(form) {
                     }
                 }
 
-                if (terganti == 0) //huruf tidak dapat diganti 
+                if (terganti == 0) //huruf tidak dapat diganti
                     stemp = stemp + abgteks.charAt(i);
             }
             abgteks = stemp;
@@ -79,4 +79,42 @@ function HumanToABG(form) {
 function SelectAll(id) {
     document.getElementById(id).focus();
     document.getElementById(id).select();
+}
+
+function CopyResult() {
+    var output = document.getElementById("i");
+    var status = document.getElementById("copy-status");
+    var copyText = output.value;
+
+    if (!copyText.trim()) {
+        updateCopyStatus(status, "Belum ada teks untuk disalin", "error");
+        return;
+    }
+
+    output.select();
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(copyText)
+            .then(function () { updateCopyStatus(status, "Tersalin!", "success"); })
+            .catch(function () { fallbackCopy(output, status); });
+    } else {
+        fallbackCopy(output, status);
+    }
+}
+
+var copyStatusTimeout;
+
+function updateCopyStatus(statusEl, message, variant) {
+    clearTimeout(copyStatusTimeout);
+    statusEl.textContent = message;
+    statusEl.className = "copy-status " + variant;
+    copyStatusTimeout = setTimeout(function () {
+        statusEl.textContent = "";
+        statusEl.className = "copy-status";
+    }, 2500);
+}
+
+function fallbackCopy(output, status) {
+    var successful = document.execCommand("copy");
+    updateCopyStatus(status, successful ? "Tersalin!" : "Gagal menyalin", successful ? "success" : "error");
 }
